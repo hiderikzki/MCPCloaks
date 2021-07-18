@@ -7,17 +7,23 @@ import net.minecraft.client.renderer.entity.RenderPlayer;
 
 public class RenderCape
 {
-    public static void renderCurrentCape(AbstractClientPlayer player, RenderPlayer playerRenderer)
+    public static boolean renderCurrentCape(AbstractClientPlayer player, RenderPlayer playerRenderer)
     {
         if(player == Minecraft.getMinecraft().thePlayer)
         {
             if(CapeManager.currentCape != null)
             {
                 YourMainClass.cape.bindTexture(CapeManager.getCurrentCape().getImage());
+                return true;
             }
             else if(player.getLocationCape() != null)
             {
                 playerRenderer.bindTexture(player.getLocationCape());
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
         else
@@ -25,6 +31,11 @@ public class RenderCape
             if(player.getLocationCape() != null)
             {
                 playerRenderer.bindTexture(player.getLocationCape());
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
     }
