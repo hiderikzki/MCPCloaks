@@ -67,7 +67,6 @@ public class CapeSelectorGui extends GuiScreen
     @Override
     public void onGuiClosed()
     {
-        YourMainClass.cape.resetTexID();
         super.onGuiClosed();
     }
 
@@ -88,6 +87,7 @@ public class CapeSelectorGui extends GuiScreen
         protected void elementClicked(int i, boolean b, int i1, int i2)
         {
             CapeManager.setCurrentCape(CapeManager.getLoadedCapes().get(i).getDisplayName());
+            YourMainClass.cape.resetTexID();
         }
 
         @Override
