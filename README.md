@@ -51,7 +51,10 @@ entitylivingbaseIn.getLocationCape() != null
 Replace texture binding function with a new texture binding function:
 
 ```Java
-RenderCape.renderCurrentCape(entitylivingbaseIn, playerRenderer);
+if(!RenderCape.renderCurrentCape(entitylivingbaseIn, playerRenderer))
+{
+  return;
+}
 ```
 
 # GuiMainMenu Class
