@@ -86,8 +86,8 @@ public class CapeSelectorGui extends GuiScreen
         @Override
         protected void elementClicked(int i, boolean b, int i1, int i2)
         {
-            CapeManager.setCurrentCape(CapeManager.getLoadedCapes().get(i).getDisplayName());
             YourMainClass.cape.resetTexID();
+            CapeManager.setCurrentCape(CapeManager.getLoadedCapes().get(i).getDisplayName());
         }
 
         @Override
